@@ -1,6 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Talk to Siri</title>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js"></script>
@@ -11,7 +12,7 @@
       background-color: #f7f7f9;
       border: 1px solid #e1e1e8;
       border-radius: 4px;
-      height: 250px;
+      height: 50%;
       overflow-y: auto;
     }
     .btn {
@@ -28,16 +29,16 @@
     <div class="highlight">
       <p class="message">Talk to Siri!</p>
       <p class="message" ng-repeat="msg in messageHistory">
-        {{msg}}
+        {{msg.text}}
       </p>
     </div>
     <form ng-submit="sendMessage()">
       <div class="form-group">
-        <div class="col-md-5 col-sm-5">
-          <input class="form-control" placeholder="Ask Siri anything!" ng-model="message" />
+        <div class="col-md-5 col-sm-5 col-xs-8">
+          <input class="form-control" placeholder="Ask Siri anything!" ng-model="message" onFocus="window.scrollTo(0, 0);" />
         </div>
-        <div class="col-md-2 col-sm-2">
-          <button class="btn btn-success btn-md">Send</button>
+        <div class="col-md-2 col-sm-2 col-xs-4">
+          <button class="btn btn-success btn-md" style="width: 100%">Send</button>
         </div>
       </div>
     </form>
